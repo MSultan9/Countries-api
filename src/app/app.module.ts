@@ -1,18 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { CountriesComponent } from './countries/countries.component';
+import { CountriesService } from './countries.service';
+import { CountryDetailComponent } from './country-detail/country-detail.component'
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    CountriesComponent,
+    CountryDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [CountriesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

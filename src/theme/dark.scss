@@ -1,0 +1,20 @@
+.dark {
+    background: hsl(207, 26%, 17%)!important;
+    .nav, .country, .input-container input, .input-container select, 
+    .back-button button, .borders button {
+        background: hsl(209, 23%, 22%)!important;
+        color: white;
+        box-shadow: none!important;
+        border: none!important
+    }
+    .container {
+        background: hsl(207, 26%, 17%)!important;
+    }
+    .input-container svg path, .input-container svg line, 
+    .back-button svg polyline, .back-button svg line{
+        stroke: white!important;
+    }
+    .input-container input::placeholder, .country-detail{
+        color: white;
+    }
+}

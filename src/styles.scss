@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,600,800&display=swap');
+@import "./theme/dark.scss";
+
+body {
+    font-family: 'Nunito Sans';
+}

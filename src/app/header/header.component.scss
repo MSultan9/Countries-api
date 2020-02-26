@@ -1,0 +1,30 @@
+svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    border-bottom: 3px solid rgba(236, 233, 233, 0.7);
+    div:first-child {
+        font-weight: 800;
+        font-size: 22px;
+    }
+    div:nth-child(2) {
+        display: flex;
+        align-items: center;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .nav {
+        padding: 20px 5px;
+    }
+}

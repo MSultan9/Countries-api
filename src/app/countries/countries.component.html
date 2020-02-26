@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="input-container">
+        <input type="text" name="search" id="search" placeholder="Search for a country..." [(ngModel)]="search"
+            (ngModelChange)="onInputChange()">
+        <select name="region" id="region" [(ngModel)]="selectedRegion" (ngModelChange)="onSelectChange()">
+            <option hidden value="" disabled selected>Filter By Region</option>
+            <option *ngFor="let region of regions" [value]="region">{{region}}</option>
+        </select>
+        <svg xmlns='http://www.w3.org/2000/svg' width='512' height='512' viewBox='0 0 512 512'>
+            <title>ionicons-v5-f</title>
+            <path d='M221.09,64A157.09,157.09,0,1,0,378.18,221.09,157.1,157.1,0,0,0,221.09,64Z'
+                style='fill:none;stroke:#000;stroke-miterlimit:10;stroke-width:32px' />
+            <line x1='338.29' y1='338.29' x2='448' y2='448'
+                style='fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px' />
+        </svg>
+    </div>
+    <div class="countries">
+        <div class="country" *ngFor="let country of countries" [routerLink]=country.alpha3Code (click)="navigate(country)">
+            <div>
+                <img src='{{country.flag}}' alt="{{country.name}}">
+            </div>
+            <div>
+                <div class="name">{{country.name}}</div>
+                <div class="detail"><span>Population: </span>{{country.population}}</div>
+                <div class="detail"><span>Region: </span>{{country.region}}</div>
+                <div class="detail"><span>Capital: </span>{{country.capital}}</div>
+            </div>
+        </div>
+    </div>
+</div>
