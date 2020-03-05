@@ -7,6 +7,8 @@ import { BehaviorSubject } from 'rxjs';
 export class CountryDetailService {
 
   countries;
+  allCountries = new BehaviorSubject('');
+  countriesState = this.allCountries.asObservable();
   private country = new BehaviorSubject('');
   currentState = this.country.asObservable();
 
@@ -14,6 +16,7 @@ export class CountryDetailService {
 
   setCountries(countries) {
     this.countries = countries;
+    this.allCountries.next(countries);
   }
 
   getCountry(country) {

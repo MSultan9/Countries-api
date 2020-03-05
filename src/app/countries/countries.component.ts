@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CountriesService } from '../countries.service'
 import { CountryDetailService } from '../country-detail.service'
 
 @Component({
@@ -16,14 +15,12 @@ export class CountriesComponent implements OnInit {
   regions = ['All', 'Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
   selectedRegion = ""
 
-  constructor(private countriesService: CountriesService, private detailService: CountryDetailService) {
-    this.countriesService.fetchCountries()
-      .subscribe(data => {
-        this.allCountries = data
-        this.renderedCountries = this.allCountries.filter(item => item.alpha2Code !== "IL")
-        this.countries = [...this.renderedCountries]
-        this.detailService.setCountries(this.renderedCountries)
-      });
+  constructor(private detailService: CountryDetailService) {
+    this.detailService.countriesState.subscribe(data => {
+      this.allCountries = [...data]
+      this.renderedCountries = this.allCountries.filter(item => item.alpha2Code !== "IL")
+      this.countries = [...this.renderedCountries]
+    });
   }
 
   ngOnInit() { }
